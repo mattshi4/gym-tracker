@@ -1,33 +1,26 @@
 # gym-tracker
 Gym progress tracker built on t3
 
-=======
-# Create T3 App
+Minimum requirements:
+Add a new exercise type: squat, bench etc
+For each exercise type, a progression history: 3 sets 10 reps at x kg
+A workout (a collection of exercises on a given date), automatically add
+exercise information from a workout to an exercise's history. 
+Be able to filter for date and search through these workouts.
+Be able to filter workouts by a tag: back etc.
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Goal requirements:
+AI assistant that you can ask questions, it will access database and then
+give user personalised advice.
+Some sort of interface where user can track weight/strength goals
 
-## What's next? How do I make an app with this?
+Start workout flow:
+Add workoutType if needed (split archetypes basically, legs, arms etc.)
+Add new exercise if required (incline bench, lat pulldowns etc.)
+Add a workout, add the workoutType to the workout. 
+Add exercises from a drop-down list populated by entries in Exercise table. 
+Add exerciseInstances once we complete an exercise.
+Exercise instance will automatically be parsed through and added to an Exercise's
+record
+End workout, gets added to our workout history
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
