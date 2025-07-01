@@ -16,6 +16,7 @@ datasource db {
 
 model User {
     id                  Int             @id @default(autoincrement())
+    clerkId             String          @unique
     name                String      
     weight              Int
     height              Int
@@ -28,6 +29,8 @@ model Workout {
     id                  Int             @id @default(autoincrement())
     startedAt           DateTime        @default(now())
     notes               String          @default("No notes taken.")
+    userId              Int         
+    user                User            @relation(fields: [userId], references: [id])
     workoutType         WorkoutType[]
     exerciseInstances   ExerciseInstance[]  
 }
@@ -47,7 +50,6 @@ model ExerciseType {
     exerciseInstances   ExerciseInstance[] 
     userId              Int
     user                User            @relation(fields: [userId], references: [id])
-    workouts            Workout[]
 }
 
 model ExerciseInstance {
